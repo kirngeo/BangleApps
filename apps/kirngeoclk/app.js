@@ -18,7 +18,9 @@ let draw = function() {
   g.setFontAlign(0, 0).setFont("Anton").drawString(timeStr, x, y);
   // Show date and day of week
   if (true) {
-    var dateStr = require("locale").date(date, 0);
+    var dateStr = require("locale").dow(date, 1) +
+                  " " +
+                  date.getDate();
     g.setFontAlign(0, 0).setFont("6x8", 4).drawString(dateStr, x, y+48);
   } else {
     var dateStr = require("locale").date(date, 0).toUpperCase()+"\n"+
