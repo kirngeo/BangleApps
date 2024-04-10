@@ -1,8 +1,8 @@
 {
   "id": "kirngeoclk",
   "name": "Kirn Geo Clock",
-  "version": "0.2",
-  "description": "A simple clock using the bold Anton font. See `Anton Clock Plus` for an enhanced version",
+  "version": "0.3",
+  "description": "Anton clock, with bigger date info, for elderly eyes",
   "icon": "app.png",
   "type": "clock",
   "tags": "clock",
