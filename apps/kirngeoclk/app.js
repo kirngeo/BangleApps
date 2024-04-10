@@ -21,7 +21,7 @@ let draw = function() {
     var dateStr = require("locale").dow(date, 1) +
                   " " +
                   date.getDate();
-    console.log("a", timeStr, Bangle.btHome);
+    if (Bangle.btHome) Bangle.btHome();
     g.setFontAlign(0, 0).setFont("6x8", 4).drawString(dateStr, x, y+48);
   } else {
     var dateStr = require("locale").date(date, 0).toUpperCase()+"\n"+
