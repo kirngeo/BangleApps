@@ -1,7 +1,7 @@
 {
   "id": "kirngeoclk",
   "name": "Kirn Geo Clock",
-  "version": "0.3",
+  "version": "0.4",
   "description": "Anton clock, with bigger date info, for elderly eyes",
   "icon": "app.png",
   "type": "clock",
