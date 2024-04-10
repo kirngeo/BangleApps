@@ -1,0 +1,15 @@
+{
+  "id": "kirngeoclk",
+  "name": "Kirn Geo Clock",
+  "version": "0.1",
+  "description": "A simple clock using the bold Anton font. See `Anton Clock Plus` for an enhanced version",
+  "icon": "app.png",
+  "type": "clock",
+  "tags": "clock",
+  "supports": ["BANGLEJS","BANGLEJS2"],
+  "allow_emulator": true,
+  "storage": [
+    {"name":"kirngeoclk.app.js","url":"app.js"},
+    {"name":"kirngeoclk.img","url":"app-icon.js","evaluate":true}
+  ]
+}
