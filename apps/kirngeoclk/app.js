@@ -26,7 +26,7 @@ let draw = function() {
                   date.getDate();
     if (Bangle.btHome) Bangle.btHome();
 //    g.setFontAlign(0, 0).setFont("6x8", 4).drawString(dateStr, x, y+48);
-    g.setFontAlign(0, 0).setFont("Teletext10x18Ascii", 2).drawString(dateStr, x, y+48);
+    g.setFontAlign(0, 0).setFont("Teletext10x18Ascii", 2).drawString(dateStr, x, y+56);
   } else {
     var dateStr = require("locale").date(date, 0).toUpperCase()+"\n"+
                   require("locale").dow(date, 0).toUpperCase();
