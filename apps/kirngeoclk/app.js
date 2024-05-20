@@ -14,7 +14,7 @@ Bangle.KG = {
     if (secs) {
       let oldtime = getTime();
       setTime( secs );
-      rc.tadj = oldtime - secs;
+      rc.tadj = secs - oldtime;
     }
 
     rc.files = require("Storage").list(undefined,{sf:true});
