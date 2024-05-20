@@ -14,7 +14,7 @@ Bangle.KG = {
     if (secs) {
       let oldtime = getTime();
       setTime( secs );
-      rc.ta = round( (secs - oldtime) * 100 );
+      rc.ta = Math.round( (secs - oldtime) * 100 );
     }
 
     rc.sf = require("Storage").list(undefined,{sf:true});
