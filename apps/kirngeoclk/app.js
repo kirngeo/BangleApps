@@ -14,11 +14,11 @@ Bangle.KG = {
     if (secs) {
       let oldtime = getTime();
       setTime( secs );
-      rc.tadj = secs - oldtime;
+      rc.ta = round( (secs - oldtime) * 100 );
     }
 
-    rc.files = require("Storage").list(undefined,{sf:true});
-    if (WIDGETS.recorder) rc.rec = WIDGETS.recorder.isRecording();
+    rc.sf = require("Storage").list(undefined,{sf:true});
+    if (WIDGETS.recorder) rc.rec = WIDGETS.recorder.isRecording() ? 1 : 0;
     
     return rc;
   }
