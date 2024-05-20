@@ -18,6 +18,8 @@ Bangle.KG = {
     }
 
     rc.files = require("Storage").list(undefined,{sf:true});
+    if (WIDGETS.recorder) rc.rec = WIDGETS.recorder.isRecording();
+    
     return rc;
   }
 };
