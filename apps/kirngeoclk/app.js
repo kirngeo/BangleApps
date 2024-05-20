@@ -18,7 +18,7 @@ Bangle.KG = {
     }
 
     rc.files = require("Storage").list(undefined,{sf:true});
-    
+    return rc;
   }
 };
 
