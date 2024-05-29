@@ -9,7 +9,7 @@ Graphics.prototype.setFontAnton = function(scale) {
 
 Bangle.KG = {
   "set" : function( secs ) {
-    let rc = {};
+    let rc = {t:"KG"};
     
     if (secs) {
       let oldtime = getTime();
