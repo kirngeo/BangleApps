@@ -21,7 +21,26 @@ Bangle.KG = {
     if (WIDGETS.recorder) rc.rec = WIDGETS.recorder.isRecording() ? 1 : 0;
     
     return rc;
+  },
+
+  "get" : function( fn ) {
+    var fp = require("Storage").read( fn );
+      var s = require("Storage").read(filename);
+    if(fp){
+      for (var i=0;i<fp.length;i+=384) console.log(btoa(fp.substr(i,384)));
+    } else {
+      fp = require("Storage").open(filename,"r");
+      var d=fp.read(384);
+      while (d!==undefined) {
+        console.log(btoa(d));
+        d=fp.read(384);
+      }
+    }
+  },
+
+  "erase" : function( fn, sz=0 ) {
   }
+  
 };
 
 { // must be inside our own scope here so that when we are unloaded everything disappears
