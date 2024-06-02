@@ -28,7 +28,8 @@ Bangle.KG = {
     if (fp === undefined) return;
     var d=fp.read(384);
     while (d!==undefined) {
-      print(btoa(d));
+      Bluetooth.println( btoa(d) );
+     // print(btoa(d));
       d=fp.read(384);
     }
     return;
