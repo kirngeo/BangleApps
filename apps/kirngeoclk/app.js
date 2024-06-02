@@ -24,7 +24,15 @@ Bangle.KG = {
   },
 
   "get" : function( fn ) {
-    var fp = require("Storage").read( fn );
+    var fp = require("StorageFile").open( fn, "r" );
+    if (fp === undefined) return;
+    var d=fp.read(384);
+    while (d!==undefined) {
+      print(btoa(d));
+      d=fp.read(384);
+    }
+    return;
+    
       var s = require("Storage").read(filename);
     if(fp){
       for (var i=0;i<fp.length;i+=384) console.log(btoa(fp.substr(i,384)));
