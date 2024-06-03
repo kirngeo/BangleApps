@@ -26,12 +26,12 @@ Bangle.KG = {
   "get" : function( fn ) {
     let chunks = [];
     let rc = {"fn":fn, "c":chunks};
-    var fp = require("StorageFile").open( fn, "r" );
+    var fp = require("Storage").open( fn, "r" );
     if (fp === undefined) return;
     var d=fp.read(384);
     while (d!==undefined) {
-      chunks.append( d );
-    //  Bluetooth.println( btoa(d) );
+    //  chunks.append( d );
+      Bluetooth.println( "<>" + btoa(d) + "<>" );
      // print(btoa(d));
       d=fp.read(384);
     }
