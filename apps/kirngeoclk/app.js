@@ -24,32 +24,20 @@ Bangle.KG = {
   },
 
   "get" : function( fn ) {
+    let chunks = [];
+    let rc = {"fn":fn, "c":chunks};
     var fp = require("StorageFile").open( fn, "r" );
     if (fp === undefined) return;
     var d=fp.read(384);
     while (d!==undefined) {
-      Bluetooth.println( btoa(d) );
+      chunks.append( d );
+    //  Bluetooth.println( btoa(d) );
      // print(btoa(d));
       d=fp.read(384);
     }
-    return;
-    
-      var s = require("Storage").read(filename);
-    if(fp){
-      for (var i=0;i<fp.length;i+=384) console.log(btoa(fp.substr(i,384)));
-    } else {
-      fp = require("Storage").open(filename,"r");
-      var d=fp.read(384);
-      while (d!==undefined) {
-        console.log(btoa(d));
-        d=fp.read(384);
-      }
-    }
-  },
-
-  "erase" : function( fn, sz=0 ) {
+    return rc;
   }
-  
+
 };
 
 { // must be inside our own scope here so that when we are unloaded everything disappears
