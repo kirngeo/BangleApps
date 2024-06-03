@@ -31,7 +31,7 @@ Bangle.KG = {
     var d=fp.read(384);
     while (d!==undefined) {
     //  chunks.append( d );
-      Bluetooth.println( "<>" + btoa(d) + "<>" );
+      Bluetooth.println( "^" + btoa(d) + "$" );
      // print(btoa(d));
       d=fp.read(384);
     }
