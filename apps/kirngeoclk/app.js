@@ -37,6 +37,25 @@ Bangle.KG = {
       d=fp.read(384);
     }
     return rc;
+  },
+
+  
+  "getn" : function( fn ) {
+    let chunks = 0;
+    let sz = 0;
+    let rc = {"fn":fn};
+    var fp = require("Storage").open( fn, "r" );
+    if (fp === undefined) return;
+    var d=fp.read(384);
+    while (d!==undefined) {
+      chunks++;
+      sz += d.length;
+      d=fp.read(384);
+    }
+    rc.sz = sz;
+    rc.nc = chunks;
+    Bluetooth.println( rc );
+    return rc;
   }
 
 };
